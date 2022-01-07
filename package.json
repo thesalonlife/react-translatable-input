@@ -35,11 +35,11 @@
   "dependencies": {
     "flag-icon-css": "^2.4.0",
     "language-tags": "^1.0.5",
-    "react-select": "^1.0.0-rc"
+    "react-select": "^4.3.1"
   },
   "peerDependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^15.4.1|16.x|17.x",
+    "react-dom": "^15.4.1|16.x|17.x"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
