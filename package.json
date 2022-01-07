@@ -38,8 +38,8 @@
     "react-select": "^4.3.1"
   },
   "peerDependencies": {
-    "react": "^15.4.1|16.x|17.x",
-    "react-dom": "^15.4.1|16.x|17.x"
+    "react": "^15.4.1 || 16.x || 17.x",
+    "react-dom": "^15.4.1 || 16.x || 17.x"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
