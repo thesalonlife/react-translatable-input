@@ -6,7 +6,7 @@ A [ReactJS](http://facebook.github.io/react/) input component that manages multi
 ![Alt text](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
 
 ```bash
-$ npm install --save react-translatable-input
+$ npm install --save git+https://github.com/thesalonlife/react-translatable-input.git
 ```
 
 ## Demo
