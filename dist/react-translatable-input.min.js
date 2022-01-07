@@ -16,8 +16,6 @@ var _reactSelect = require('react-select');
 
 var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
-require('react-select/dist/react-select.css');
-
 require('flag-icons/css/flag-icons.min.css');
 
 var _languageTags = require('language-tags');

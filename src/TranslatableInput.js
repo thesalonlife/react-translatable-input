@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 import 'flag-icons/css/flag-icons.min.css';
 import tags from 'language-tags';
 
