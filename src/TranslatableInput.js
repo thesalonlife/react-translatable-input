@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Select from 'react-select';
 import 'flag-icons/css/flag-icons.min.css';
 import tags from 'language-tags';
@@ -16,7 +17,7 @@ const propTypes = {
   classes: PropTypes.string,            // Additional HTML classes to pass to the component
   disabled: PropTypes.bool,             // Is the component disabled?
   showLanguageName: PropTypes.bool,     // Show the language name label next to the flag?
-  langTranslator: PropTypes.func        // Translate iso langage codes to language names
+  langTranslator: PropTypes.func,        // Translate iso langage codes to language names
 };
 
 class TranslatableInput extends Component {
@@ -24,7 +25,7 @@ class TranslatableInput extends Component {
     super(props);
 
     this.state = {
-      isFocused: false
+      isFocused: false,
     };
   }
 
@@ -54,7 +55,7 @@ class TranslatableInput extends Component {
 
   focused(isFocused) {
     this.setState({
-      isFocused
+      isFocused,
     });
   }
 
@@ -72,7 +73,8 @@ class TranslatableInput extends Component {
             className="flag-icon flag-icon-default"
             title={option.value}
           />
-          { showLanguageName ? <div className="language-name" title={defaultName}>{defaultName}</div> : null }
+          {showLanguageName ?
+            <div className="language-name" title={defaultName}>{defaultName}</div> : null}
         </div>
       );
     }
@@ -102,7 +104,7 @@ class TranslatableInput extends Component {
           className={langClasses}
           title={option.value}
         />
-        { showLanguageName ? <div className="language-name" title={langName}>{langName}</div> : null }
+        {showLanguageName ? <div className="language-name" title={langName}>{langName}</div> : null}
       </div>
     );
   }
@@ -112,8 +114,9 @@ class TranslatableInput extends Component {
     const { isFocused } = this.state;
 
     const langOptions = Object.keys(values)
-                              .filter(l => tags(l).valid())
-                              .map(tag => ({ label: tag, value: tag }));
+      .filter(l => tags(l)
+        .valid())
+      .map(tag => ({ label: tag, value: tag }));
 
     // put default language on top of the list, if present
     if (values.hasOwnProperty('default')) {
@@ -164,16 +167,16 @@ class TranslatableInput extends Component {
               onFocus={() => this.focused(true)}
               onBlur={() => this.focused(false)}
             />
-          : <input
-            type="text"
-            value={values[lang]}
-            onChange={e => this.changeValue(e.target.value)}
-            onKeyDown={e => this.keyPressed(e)}
-            placeholder={this.props.placeholder}
-            disabled={this.props.disabled}
-            onFocus={() => this.focused(true)}
-            onBlur={() => this.focused(false)}
-          />
+            : <input
+              type="text"
+              value={values[lang]}
+              onChange={e => this.changeValue(e.target.value)}
+              onKeyDown={e => this.keyPressed(e)}
+              placeholder={this.props.placeholder}
+              disabled={this.props.disabled}
+              onFocus={() => this.focused(true)}
+              onBlur={() => this.focused(false)}
+            />
         }
       </div>
     );
