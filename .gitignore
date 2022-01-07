@@ -73,5 +73,4 @@ Temporary Items
 .apdisk
 
 # Custom
-lib
-dist
+.idea
